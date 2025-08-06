@@ -5,10 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Horseshoe Crab Evolution</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horseshoe Crab Anatomy & Evolution - Index</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      text-align: left;
       background: linear-gradient(#eef2f3, #8e9eab);
       color: #333;
       overflow-x: hidden;
@@ -44,9 +49,14 @@
       background: #fff;
       transition: width 0.3s ease;
     }
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: #ffdd57; }
     main { max-width: 960px; margin: 2rem auto; padding: 0 1rem; background: rgba(255,255,255,0.85); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); animation: fadeIn 1.2s ease; }
     section { margin-bottom: 2rem; transition: transform 0.4s ease, background 0.4s ease; padding: 1rem; border-radius: 8px; }
     h2 { border-bottom: 2px solid #2e4a62; padding-bottom: 0.5rem; cursor: pointer; transition: color 0.3s ease; }
+    .expand { max-height: 0; overflow: hidden; transition: max-height 0.6s ease; }
+    .expand.open { max-height: 500px; }
+    .embed-wrapper { text-align: center; margin: 2rem 0; animation: fadeInUp 1.5s ease; }
     footer { text-align: center; padding: 1rem; background: #2e4a62; color: #fff; animation: slideUp 1s ease; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
@@ -67,19 +77,18 @@
   <main>
     <section>
       <img src="maxresdefault.jpg" alt="Horseshoe Crab Evolution is consistent. " style="width: 925px; height:600px;">
-      <h2>Horseshoe Crab Evolution</h2>
+      <h2 style="text-align: center;">Horseshoe Crab Evolution</h2>
       <p>The horseshoe crab's evolutionary journey is a profound testament to its enduring design and adaptive success, earning it a unique place in the history of life.</p>
     
-      <h2>Genomic Understandings into Evolution</h2>
+      <h2 style="text-align: center;">Genomic Understandings into Evolution</h2>
       <p>Recent genomic studies have provided deeper layers of understanding beyond their external morphological stasis. Researchers have explored the evolutionary relationship between RNA viruses and horseshoe crabs by analysing viral sequences embedded within their genomes. The presence of chuvirus-like sequences within these genomes suggests that modern negative-sense RNA viruses may trace their origins back to ancient chuviruses found in the ocean.
 A time-scaled phylogenetic tree constructed from non-retroviral endogenous RNA viral elements (hcEVEs) indicates that at least two independent ancient chuvirus infections and subsequent genome integration events occurred in the common ancestor of horseshoe crab species. This suggests that while their external form has remained consistent, their genomes have undergone dynamic interactions, such as the integration and co-option of viral elements. This indicates that "evolutionary consistency" does not imply a complete absence of genetic change, but rather that the fundamental adaptive strategy encoded in their genome has been remarkably stable and successful, allowing for subtle, beneficial genomic "tinkering" (like viral co-option) without altering the core body plan. This perspective challenges a simplistic view of "living fossils" as entirely static, positioning horseshoe crabs as unique models for studying the long-term interplay between genomic plasticity and phenotypic stability.
       </p>
 
-      <h2>Adaptations for Longevity</h2>
+      <h2 style="text-align: center;">Adaptations for Longevity</h2>
       <p>The expansion of conserved immune signalling pathway genes, coagulation factors, and intact antimicrobial peptides contributes to a robust and effective innate immunity, crucial for self-defence in marine environments teeming with numerous pathogens. This highly effective immune system is a primary driver of their long evolutionary history. In environments with high pathogen loads, a powerful immune defence would have been a strong selective force, favouring the retention of this robust system. This underscores the critical role of immune defence in the long-term survival and evolutionary consistency of species, offering valuable insights for immunology. Their vital system protecting against endotoxins is a direct adaptation to their habitat, which naturally contains vast amounts of such substances. These combined physiological and genomic adaptations are key factors in their remarkable long-term survival in challenging marine environments.</p>
     </section>
   </main>
   <footer><p>&copy; 2025 Aaron Zhou IB Biology</p></footer>
 </body>
 </html>
-
