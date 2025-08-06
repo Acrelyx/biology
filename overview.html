@@ -4,15 +4,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Overview - Horseshoe Crab</title>
+  <title>Horseshoe Crab Anatomy & Evolution - Index</title>
   <style>
-    /* same styles as index for consistency */
-    body{margin:0;font-family:Arial, sans-serif;background:linear-gradient(#eef2f3,#8e9eab);color:#333;overflow-x:hidden}
-    header{background:#2e4a62;color:#fff;padding:1rem;text-align:center}
-    nav{display:flex;justify-content:center;background:#3b5a72}
-    nav a{color:#fff;margin:.5rem 1rem;text-decoration:none;padding:.5rem}
-    main{max-width:960px;margin:2rem auto;padding:0 1rem;background:rgba(255,255,255,.85);border-radius:8px}
-    h2{border-bottom:2px solid #2e4a62;padding-bottom:.5rem}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(#eef2f3, #8e9eab);
+      color: #333;
+      overflow-x: hidden;
+    }
+    header {
+      background: #2e4a62;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      animation: slideDown 1s ease;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #3b5a72;
+    }
+    nav a {
+      color: #fff;
+      margin: 0.5rem 1rem;
+      text-decoration: none;
+      padding: 0.5rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width 0.3s ease;
+    }
+    main { max-width: 960px; margin: 2rem auto; padding: 0 1rem; background: rgba(255,255,255,0.85); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); animation: fadeIn 1.2s ease; }
+    section { margin-bottom: 2rem; transition: transform 0.4s ease, background 0.4s ease; padding: 1rem; border-radius: 8px; }
+    h2 { border-bottom: 2px solid #2e4a62; padding-bottom: 0.5rem; cursor: pointer; transition: color 0.3s ease; }
+    footer { text-align: center; padding: 1rem; background: #2e4a62; color: #fff; animation: slideUp 1s ease; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+    @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
@@ -28,7 +67,13 @@
   <main>
     <section>
       <h2>Quick summary</h2>
-      <p>Placeholder — add your content here.</p>
+      <p>Horseshoe crabs are ancient, unique marine arthropods in order Xiphosura, subphylum Chelicerata—closely related to spiders and scorpions, not true crabs (Encyclopedia Britannica). Their lineage traces back over 440–505 million years, granting them the title of “living fossils” (AnimalFact.com).</p>
+    
+      <h2>Habitat and Distribution</h2>
+      <p>They inhabit shallow coastal and estuarine waters with sandy or muddy bottoms, typical of intertidal zones and lagoons. Ranges vary: the Atlantic horseshoe crab (Limulus polyphemus) occupies the Gulf and Atlantic coasts of North America, from Florida to Maine and Mexico's Yucatán; three Asian species (Tachypleus tridentatus, T. gigas, Carcinoscorpius rotundicauda) occupy Indian and Western Pacific shores (Animalia). Activity peaks in water under ~30 m depth and salinities near seawater norms (~20–40‰) (Animalia).</p>
+
+      <h2>Diet & Feeding</h2>
+      <p>Juveniles ingest organic detritus from algae and animal sources; adults prey on benthic invertebrates—worms, clams, mollusks, small crustaceans, bits of fish and algae. They use legs to grind food for gizzard processing</p>
     </section>
   </main>
   <footer><p>&copy; 2025 Horseshoe Crab Research</p></footer>
