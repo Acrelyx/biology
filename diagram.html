@@ -1,0 +1,122 @@
+<!-- diagram.html (Interactive Diagram Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css"> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Diagram - Horseshoe Crab</title>
+  <style>
+    /* consistent with other pages */
+    body { margin:0; font-family:Arial,sans-serif; background:linear-gradient(#eef2f3,#8e9eab); color:#333; overflow-x:hidden; }
+    header { background:#2e4a62; color:#fff; padding:1rem; text-align:center; }
+    nav { display:flex; justify-content:center; background:#3b5a72; }
+    nav a { color:#fff; margin:.5rem 1rem; text-decoration:none; padding:.5rem; }
+    main { max-width:960px; margin:2rem auto; padding:0 1rem; background:rgba(255,255,255,.85); border-radius:8px; position:relative; }
+    .diagram-container { position:relative; text-align:center; }
+    .diagram-container img { max-width:100%; height:auto; display:block; margin:0 auto; }
+    .hotspot { position:absolute; width:20px; height:20px; border-radius:50%; background:#ffdd57; cursor:pointer; transform:translate(-50%,-50%); }
+    .popup {
+      position:absolute;
+      background:rgba(255,255,255,0.95);
+      border:2px solid #2e4a62;
+      border-radius:8px;
+      padding:1rem;
+      max-width:200px;
+      opacity:0;
+      transform:scale(0.8);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      pointer-events:none;
+      z-index:10;
+    }
+    .popup.visible {
+      opacity:1;
+      transform:scale(1);
+      pointer-events:auto;
+    }
+    .popup::after { content:''; position:absolute; width:0; height:0; border-style:solid; }
+    #flip-btn {
+      display:block;
+      margin:1rem auto;
+      padding:.5rem 1rem;
+      background:#2e4a62;
+      color:#fff;
+      border:none;
+      border-radius:4px;
+      cursor:pointer;
+      transition: background 0.3s ease;
+    }
+    #flip-btn:hover { background:#3b5a72; }
+  </style>
+</head>
+<body>
+  <header><h1>Interactive Diagram</h1></header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="overview.html">Overview</a>
+    <a href="diagram.html">Diagram</a>
+    <a href="anatomy.html">Anatomy</a>
+    <a href="evolution.html">Evolution</a>
+    <a href="model.html">3D Model</a>
+  </nav>
+  <main>
+    <section>
+      <h1 style="text-align: center;">Horseshoe Crab Anatomy Diagram</h1>
+      <button id="flip-btn">Flip View</button>
+      <div class="diagram-container">
+        <img src="crab_top.jpg" alt="Horseshoe Crab Diagram" style="height: 550px; width: 350px;">
+        <!-- Example hotspot -->
+        <div class="hotspot bottomside" style="top:40%;left:57%;" data-popup="popup-pusher"></div>
+        <div id="popup-pusher" class="popup" style="top:40%;left:57%;">
+          <h3>Pusher Legs</h3>
+          <p>Last pair of legs, used for locomotion and for digging in the sand.</p>
+        </div>
+        <div class="hotspot bottomside" style="top:43%;left:48%;" data-popup="popup-gills"></div>
+        <div id="popup-gills" class="popup" style="top:43%;left:26%;">
+          <h3 >Book Gills</h3>
+          <p>Respiratory gas exchange, occasional swimming</p>
+        </div>
+        <div class="hotspot bottomside" style="top:30%;left:60%;" data-popup="popup-legs"></div>
+        <div id="popup-legs" class="popup" style="top:30%;left:60%;">
+          <h3 >Walking Legs</h3>
+          <p>Regular leg pairs used in movement</p>
+        </div>
+        <div class="hotspot bottomside" style="top:20%;left:50%;" data-popup="popup-chelicerae"></div>
+        <div id="popup-chelicerae" class="popup" style="top:20%;left:50%;">
+          <h3 >Chelicerae</h3>
+          <p>First pair of legs, used to place food in the mouth</p>
+        </div>
+        <div class="hotspot bottomside" style="top:25%;left:51%;" data-popup="popup-mouth"></div>
+        <div id="popup-mouth" class="popup" style="top:25%;left:51%;">
+          <h3 >Mouth</h3>
+          <p>Uses gastric mill to grind and 'chew' the food into a goop more easily absorbed.</p>
+        </div>
+        <!-- Add more hotspots as needed -->
+      </div>
+    </section>
+  </main>
+  <footer><p>&copy; 2025 Horseshoe Crab Research</p></footer>
+  <script>
+    let flipped = false;
+    const flipBtn = document.getElementById('flip-btn');
+    const img = document.getElementById('diagram-img');
+    const topsideHotspots = document.querySelectorAll('.hotspot.topside');
+    const bottomsideHotspots = document.querySelectorAll('.hotspot.bottomside');
+
+    flipBtn.addEventListener('click', () => {
+      flipped = !flipped;
+      img.src = flipped ? 'crab_bottom.jpg' : 'crab_top.jpg';
+      topsideHotspots.forEach(el => el.style.display = flipped ? 'none' : 'block');
+      bottomsideHotspots.forEach(el => el.style.display = flipped ? 'block' : 'none');
+      document.querySelectorAll('.popup').forEach(p => p.classList.remove('visible'));
+    });
+
+    document.querySelectorAll('.hotspot').forEach(el => {
+      el.addEventListener('click', () => {
+        const popup = document.getElementById(el.dataset.popup);
+        popup.classList.toggle('visible');
+      });
+    });
+  </script>
+</body>
+</html>
