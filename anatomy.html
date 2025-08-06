@@ -1,0 +1,158 @@
+<!-- overview.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horseshoe Crab Anatomy & Evolution - Index</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      background-color: rgba(255,255,255,0.95);
+    }
+    thead {
+      background-color: #2e4a62;
+      color: #fff;
+    }
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+    }
+    tr:hover {
+      background-color: rgba(142,158,171,0.2);
+      transition: background-color 0.3s ease;
+    }
+    th {
+      font-weight: bold;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(#eef2f3, #8e9eab);
+      color: #333;
+      overflow-x: hidden;
+    }
+    header {
+      background: #2e4a62;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      animation: slideDown 1s ease;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #3b5a72;
+    }
+    nav a {
+      color: #fff;
+      margin: 0.5rem 1rem;
+      text-decoration: none;
+      padding: 0.5rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width 0.3s ease;
+    }
+    main { max-width: 960px; margin: 2rem auto; padding: 0 1rem; background: rgba(255,255,255,0.85); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); animation: fadeIn 1.2s ease; }
+    section { margin-bottom: 2rem; transition: transform 0.4s ease, background 0.4s ease; padding: 1rem; border-radius: 8px; }
+    h2 { border-bottom: 2px solid #2e4a62; padding-bottom: 0.5rem; cursor: pointer; transition: color 0.3s ease; }
+    footer { text-align: center; padding: 1rem; background: #2e4a62; color: #fff; animation: slideUp 1s ease; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+    @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+  <header><h1>Anatomy Table</h1></header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="overview.html">Overview</a>
+    <a href="anatomy.html">Anatomy</a>
+    <a href="exoskeleton.html">Exoskeleton</a>
+    <a href="evolution.html">Evolution</a>
+    <a href="model.html">3D Model</a>
+  </nav>
+  <main>
+    <section id="anatomy-table">
+      <h2>Anatomy</h2>
+      <div>
+        <p>The table below details the simple yet strikingly effective physiological features of the horseshoe crab.</p>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Function</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Body Carapace</td>
+            <td>Protection of internal organs</td>
+          </tr>
+          <tr>
+            <td>Legs/Chelicerae/Pedipalps</td>
+            <td>Locomotion, feeding (guiding/crushing food), male grasping during mating</td>
+          </tr>
+          <tr>
+            <td>Book Gills</td>
+            <td>Respiratory gas exchange, occasional swimming</td>
+          </tr>
+          <tr>
+            <td>Compound Eyes</td>
+            <td>Vision, mate finding, adaptation to day/night light sensitivity</td>
+          </tr>
+          <tr>
+            <td>Median/Endoparietal/Ventral Eyes</td>
+            <td>Detection of visible and UV light, lunar cycle tracking (important for spawning)</td>
+          </tr>
+          <tr>
+            <td>Chemoreceptors</td>
+            <td>"Smelling" or detecting prey</td>
+          </tr>
+          <tr>
+            <td>Digestive System (Gizzard)</td>
+            <td>Crushing and grinding food (lacking jaws)</td>
+          </tr>
+          <tr>
+            <td>Circulatory System (Blue Blood/Hemocyanin)</td>
+            <td>Oxygen transport throughout the body</td>
+          </tr>
+          <tr>
+            <td>Amebocytes/LAL</td>
+            <td>Pathogen detection, rapid blood clotting, basis for biomedical testing (Limulus Amebocyte Lysate)</td>
+          </tr>
+          <tr>
+            <td>Innate Immune System</td>
+            <td>Robust defence against invading pathogens (coagulation, agglutination, antibacterial substances)</td>
+          </tr>
+          <tr>
+            <td>Exoskeleton/Molting</td>
+            <td>Growth (shedding old shell to increase size)</td>
+          </tr>
+          <tr>
+            <td>Telson (Tail)</td>
+            <td>Self-righting mechanism if overturned, protection</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <footer><p>&copy; 2025 Horseshoe Crab Research</p></footer>
+</body>
+</html>
