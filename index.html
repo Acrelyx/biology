@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Horseshoe Crab Anatomy & Evolution</title>
+  <title>Horseshoe Crab Anatomy & Evolution - Index</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: linear-gradient(#eef2f3, #8e9eab);
       color: #333;
+      overflow-x: hidden;
     }
     header {
       background: #2e4a62;
@@ -17,6 +18,7 @@
       padding: 1rem;
       text-align: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      animation: slideDown 1s ease;
     }
     nav {
       display: flex;
@@ -28,35 +30,34 @@
       margin: 0.5rem 1rem;
       text-decoration: none;
       padding: 0.5rem;
+      position: relative;
+      transition: color 0.3s ease;
     }
-    nav a:hover {
-      background: rgba(255,255,255,0.1);
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width 0.3s ease;
     }
-    main {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      background: rgba(255,255,255,0.8);
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    h2 {
-      border-bottom: 2px solid #2e4a62;
-      padding-bottom: 0.5rem;
-    }
-    .embed-wrapper {
-      text-align: center;
-      margin: 2rem 0;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #2e4a62;
-      color: #fff;
-    }
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: #ffdd57; }
+    main { max-width: 960px; margin: 2rem auto; padding: 0 1rem; background: rgba(255,255,255,0.85); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); animation: fadeIn 1.2s ease; }
+    section { margin-bottom: 2rem; transition: transform 0.4s ease, background 0.4s ease; padding: 1rem; border-radius: 8px; }
+    section:hover { transform: scale(1.02); background: rgba(255,255,255,0.95); }
+    h2 { border-bottom: 2px solid #2e4a62; padding-bottom: 0.5rem; cursor: pointer; transition: color 0.3s ease; }
+    h2:hover { color: #2e7d98; }
+    .expand { max-height: 0; overflow: hidden; transition: max-height 0.6s ease; }
+    .expand.open { max-height: 500px; }
+    .embed-wrapper { text-align: center; margin: 2rem 0; animation: fadeInUp 1.5s ease; }
+    footer { text-align: center; padding: 1rem; background: #2e4a62; color: #fff; animation: slideUp 1s ease; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+    @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
@@ -64,47 +65,52 @@
     <h1>Horseshoe Crab: Anatomy & Evolutionary Consistency</h1>
   </header>
   <nav>
-    <a href="#overview">Overview</a>
-    <a href="#anatomy">Anatomy</a>
-    <a href="#exoskeleton">Exoskeleton</a>
-    <a href="#evolution">Evolution</a>
-    <a href="#model">Model</a>
+    <a href="index.html">Home</a>
+    <a href="overview.html">Overview</a>
+    <a href="anatomy.html">Anatomy</a>
+    <a href="exoskeleton.html">Exoskeleton</a>
+    <a href="evolution.html">Evolution</a>
+    <a href="model.html">3D Model</a>
   </nav>
   <main>
     <section id="overview">
       <h2>Overview</h2>
-      <p>Horseshoe crabs (Limulus polyphemus) have existed for over 450 million years with minimal morphological change. Their body plan combines stability and adaptability, contributing to their survival through multiple mass extinctions.</p>
+      <div class="expand open">
+        <p>Horseshoe crabs (Limulus polyphemus) have existed for over 450 million years with minimal morphological change. Their body plan combines stability and adaptability, contributing to their survival through multiple mass extinctions.</p>
+      </div>
     </section>
     <section id="anatomy">
       <h2>Anatomical Features</h2>
-      <ul>
-        <li><strong>Prosoma (Cephalothorax):</strong> Protective region housing vital organs.</li>
-        <li><strong>Opisthosoma (Abdomen):</strong> Muscular segment aiding in movement.</li>
-        <li><strong>Telson (Tail Spine):</strong> Stabilizes and rights the animal if overturned.</li>
-        <li><strong>Chelicerae:</strong> Appendages near mouth for feeding.</li>
-        <li><strong>Pedipalps:</strong> Secondary appendages for handling food and locomotion.</li>
-      </ul>
-    </section>
-    <section id="exoskeleton">
-      <h2>Exoskeleton Structure</h2>
-      <p>Chitinous carapace provides protection and rigidity. Layers of calcified plates resist predation and environmental pressures while permitting growth via molting. Sensory setae detect chemical and mechanical stimuli.</p>
+      <div class="expand">
+        <ul>
+          <li><strong>Prosoma (Cephalothorax):</strong> Protective region housing vital organs.</li>
+          <li><strong>Opisthosoma (Abdomen):</strong> Muscular segment aiding in movement.</li>
+          <li><strong>Telson (Tail Spine):</strong> Stabilizes and rights the animal if overturned.</li>
+        </ul>
+      </div>
     </section>
     <section id="evolution">
       <h2>Evolutionary Consistency</h2>
-      <p>Conserved body plan reflects ecological success. Modular anatomy permits minor adaptations without disrupting core functions. Stability linked to niche specialization in shallow marine environments.</p>
-    </section>
-    <section id="model">
-        <h2>Interactive Model</h2>
-        <p>Use the interactive 3D model below for reference</p>
+      <div class="expand">
+        <p>Conserved body plan reflects ecological success. Modular anatomy permits minor adaptations without disrupting core functions.</p>
+      </div>
     </section>
     <div class="embed-wrapper">
       <div class="sketchfab-embed-wrapper">
-        <iframe title="Horseshoe crab: Limulus polyphemus (PRI)" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="550" height="400" src="https://sketchfab.com/models/1e425587f84e4b66913dec45850bbdb3/embed?dnt=1"></iframe>
+        <iframe title="Horseshoe crab: Limulus polyphemus (PRI)" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="650" height="480" src="https://sketchfab.com/models/1e425587f84e4b66913dec45850bbdb3/embed?dnt=1"></iframe>
       </div>
     </div>
   </main>
   <footer>
-    <p>&copy; Aaron Zhou 2025 IB Biology</p>
+    <p>&copy; 2025 Horseshoe Crab Research</p>
   </footer>
+  <script>
+    document.querySelectorAll('h2').forEach(h2 => {
+      h2.addEventListener('click', () => {
+        const expand = h2.nextElementSibling;
+        expand.classList.toggle('open');
+      });
+    });
+  </script>
 </body>
 </html>
