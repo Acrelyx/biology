@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Horseshoe Crab</title>
+  <style>
+    /* consistent with site theme */
+    body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(#eef2f3,#8e9eab);color:#333;overflow-x:hidden}
+    header{background:#2e4a62;color:#fff;padding:1rem;text-align:center}
+    nav{display:flex;justify-content:center;background:#3b5a72}
+    nav a{color:#fff;margin:.5rem 1rem;text-decoration:none;padding:.5rem;transition:color .3s}
+    nav a:hover{color:#ffdd57}
+    main{max-width:720px;margin:2rem auto;padding:1rem;background:rgba(255,255,255,.85);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+    h2{border-bottom:2px solid #2e4a62;padding-bottom:.5rem;margin-bottom:1rem}
+    .question{margin-bottom:1.5rem}
+    .options label{display:block;margin:.3rem 0;cursor:pointer}
+    #submit-btn{padding:.5rem 1rem;background:#2e4a62;color:#fff;border:none;border-radius:4px;cursor:pointer;transition:background .3s}
+    #submit-btn:hover{background:#3b5a72}
+    #result{margin-top:1rem;font-weight:bold}
+  </style>
+</head>
+<body>
+  <header><h1>Horseshoe Crab Quiz</h1></header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="overview.html">Overview</a>
+    <a href="anatomy.html">Anatomy</a>
+    <a href="exoskeleton.html">Exoskeleton</a>
+    <a href="evolution.html">Evolution</a>
+    <a href="model.html">3D Model</a>
+    <a href="diagram.html">Diagram</a>
+    <a href="quiz.html">Quiz</a>
+  </nav>
+  <main>
+    <h2>Test your knowledge</h2>
+    <form id="quiz-form">
+      <div class="question">
+        <p>1. What is the primary function of the telson (tail)?</p>
+        <div class="options">
+          <label><input type="radio" name="q1" value="a"> A) Digestion</label>
+          <label><input type="radio" name="q1" value="b"> B) Respiration</label>
+          <label><input type="radio" name="q1" value="c"> C) Righting itself when overturned</label>
+          <label><input type="radio" name="q1" value="d"> D) Sensory perception</label>
+        </div>
+      </div>
+      <div class="question">
+        <p>2. Which material makes up the horseshoe crab’s exoskeleton?</p>
+        <div class="options">
+          <label><input type="radio" name="q2" value="a"> A) Cellulose</label>
+          <label><input type="radio" name="q2" value="b"> B) Chitin</label>
+          <label><input type="radio" name="q2" value="c"> C) Keratin</label>
+          <label><input type="radio" name="q2" value="d"> D) Calcium carbonate</label>
+        </div>
+      </div>
+      <div class="question">
+        <p>3. Approximately how many years have horseshoe crabs existed?</p>
+        <div class="options">
+          <label><input type="radio" name="q3" value="a"> A) 50 million years</label>
+          <label><input type="radio" name="q3" value="b"> B) 100 million years</label>
+          <label><input type="radio" name="q3" value="c"> C) 250 million years</label>
+          <label><input type="radio" name="q3" value="d"> D) Over 450 million years</label>
+        </div>
+      </div>
+      <button type="button" id="submit-btn">Submit</button>
+    </form>
+    <div id="result"></div>
+  </main>
+  <footer><p>&copy; 2025 Horseshoe Crab Research</p></footer>
+  <script>
+    document.getElementById('submit-btn').addEventListener('click',()=>{
+      const answers={q1:'c',q2:'b',q3:'d'};
+      let score=0;
+      Object.keys(answers).forEach(key=>{
+        const val=document.querySelector(`input[name="${key}"]:checked`);
+        if(val && val.value===answers[key]) score++;
+      });
+      document.getElementById('result').textContent=`You scored ${score} out of ${Object.keys(answers).length}.`;
+    });
+  </script>
+</body>
+</html>
