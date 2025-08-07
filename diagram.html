@@ -66,7 +66,7 @@
       border:2px solid #2e4a62;
       border-radius:8px;
       padding:1rem;
-      max-width:200px;
+      max-width:500px;
       opacity:0;
       transform:scale(0.8);
       transition: opacity 0.4s ease, transform 0.4s ease;
@@ -108,7 +108,7 @@
       <h1 style="text-align: center;">Horseshoe Crab Anatomy Diagram</h1>
       <button id="flip-btn">Flip View</button>
       <div class="diagram-container">
-        <img src="crab_top.jpg" alt="Horseshoe Crab Diagram" style="height: 550px; width: 350px;">
+        <img id="diagram" src="crab_top.jpg" alt="Horseshoe Crab Diagram" style="height: 550px; width: 350px;">
         <!-- Example hotspot -->
         <div class="hotspot bottomside" style="top:40%;left:57%;" data-popup="popup-pusher"></div>
         <div id="popup-pusher" class="popup" style="top:40%;left:57%;">
@@ -135,21 +135,56 @@
           <h3 >Mouth</h3>
           <p>Uses gastric mill to grind and 'chew' the food into a goop more easily absorbed.</p>
         </div>
-        <!-- Add more hotspots as needed -->
+        <div class="hotspot bottomside" style="top:78%;left:50%;" data-popup="popup-telson"></div>
+        <div id="popup-telson" class="popup" style="top:78%;left:50%;">
+          <h3>Telson</h3>
+          <p>The telson (tail) acts as a rudder, helping the horseshoe crab navigate and steer through the water. If a wave or predator flips a horseshoe crab onto its back, it uses its telson to flip itself back over. The telson can also be used to help the crab burrow into the sand</p>
+        </div>
+
+        <!-- TOP SIDE -->
+        <div class="hotspot topside" style="top:23%;left:58%;" data-popup="popup-lateye"></div>
+        <div id="popup-lateye" class="popup" style="top:23%;left:58%;">
+          <h3 >Lateral Eye</h3>
+          <p>Two large, prominent compound lateral eyes used for finding mates, especially during spawning season. These eyes are composed of approximately 1,000 individual ommatidia, each acting as a separate visual unit.</p>
+        </div>
+        <div class="hotspot topside" style="top:70%;left:50%;" data-popup="popup-array"></div>
+        <div id="popup-array" class="popup" style="top:70%;left:50%;">
+          <h3>Photoreceptor Array</h3>
+          <p>A unique set of light-sensing organs, including a collection of photoreceptors located on the telson (tail). 
+            These photoreceptors, while not fully understood, are believed to help synchronize the horseshoe crab's brain with light and dark cycles.</p>
+        </div>
+        <div class="hotspot topside" style="top:15%;left:50%;" data-popup="popup-median"></div>
+        <div id="popup-median" class="popup" style="top:15%;left:50%;">
+          <h3>Median Ocelli</h3>
+          <p>A pair of simple eyes located on the top of their prosoma, near the front. These ocelli are sensitive to ultraviolet (UV) light and play a role in enhancing the sensitivity of the larger, compound lateral eyes, especially in low light conditions like during the night and on full moon nights.</p>
+        </div>
+        <div class="hotspot topside" style="top:16%;left:60%;" data-popup="popup-head"></div>
+        <div id="popup-head" class="popup" style="top:16%;left:60%;">
+          <h3>Head</h3>
+          <p>Also called the prosoma, is a large, U-shaped structure that resembles a horseshoe. It's the frontmost part of the body and contains the brain, heart, eyes, mouth, and nervous system. The prosoma is covered by a hard exoskeleton made of chitin, which protects the vital organs within.</p>
+        </div>
+        <div class="hotspot topside" style="top:50%;left:55%;" data-popup="popup-abs"></div>
+        <div id="popup-abs" class="popup" style="top:50%;left:55%;">
+          <h3>Abdomen</h3>
+          <p>The abdomen, or opisthosoma. It looks like a triangle with spines on the sides and a ridge in the center. The spines are movable and help protect the horseshoe crab. On the underside of the abdomen are muscles, used for movement, and gills for breathing.</p>
+        </div>
       </div>
     </section>
   </main>
   <footer><p>&copy; 2025 Aaron Zhou IB Biology</p></footer>
   <script>
-    let flipped = false;
+    let flipped = true;
     const flipBtn = document.getElementById('flip-btn');
-    const img = document.getElementById('diagram-img');
+    const img = document.getElementById('diagram');
     const topsideHotspots = document.querySelectorAll('.hotspot.topside');
     const bottomsideHotspots = document.querySelectorAll('.hotspot.bottomside');
+    topsideHotspots.forEach(el => el.style.display = flipped ? 'none' : 'block');
+    bottomsideHotspots.forEach(el => el.style.display = flipped ? 'block' : 'none');
+    document.querySelectorAll('.popup').forEach(p => p.classList.remove('visible'));
 
     flipBtn.addEventListener('click', () => {
       flipped = !flipped;
-      img.src = flipped ? 'crab_bottom.jpg' : 'crab_top.jpg';
+      img.src = flipped ? 'crab_top.jpg' : 'crab_bottom.jpg';
       topsideHotspots.forEach(el => el.style.display = flipped ? 'none' : 'block');
       bottomsideHotspots.forEach(el => el.style.display = flipped ? 'block' : 'none');
       document.querySelectorAll('.popup').forEach(p => p.classList.remove('visible'));
